@@ -15,9 +15,28 @@ export class EpidemicService {
     }
 
 
-
     addModel(task: EpidemicModel): void {
         this.epidemicModelsArray.push(task);
+        this.updateSimulationsList();
+    }
+
+    initSimulations(): void {
+        const retrievedObject = localStorage.getItem(this.localStorageName);
+        const locations: Array<EpidemicModel> = JSON.parse(retrievedObject);
+        this.epidemicModelsArray = locations;
+        if (this.epidemicModelsArray.length === 0) {
+            this.epidemicModelsArray = this.epidemicModelsArray;
+        }
+        this.updateSimulationsList();
+    }
+
+    deleteSimulation(wantedId: string): void {
+        const removeIndex = this.epidemicModelsArray.map((item) => {
+            return item.id;
+        }).indexOf(wantedId);
+
+        this.epidemicModelsArray.splice(removeIndex, 1);
+
         this.updateSimulationsList();
     }
 

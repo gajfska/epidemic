@@ -35,7 +35,7 @@ export class TableComponent implements OnInit {
     }
 
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.subscription = this.epidemicService.epidemicChangedSubject
             .subscribe(
                 (simulations: EpidemicModel[]) => {
@@ -44,7 +44,12 @@ export class TableComponent implements OnInit {
                 }
             );
         this.dataSource = new MatTableDataSource([]);
+        this.epidemicService.initSimulations();
 
+    }
+
+    onDelete(id: string): void {
+        this.epidemicService.deleteSimulation(id);
     }
 
 }
