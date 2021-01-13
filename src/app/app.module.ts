@@ -10,12 +10,14 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
+import {TableComponent} from './table/table.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-      FormComponent
+      FormComponent,
+      TableComponent
 
   ],
   imports: [
