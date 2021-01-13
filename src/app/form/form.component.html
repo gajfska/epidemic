@@ -1,10 +1,159 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<form class="example-container" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <mat-form-field appearance="standard">
+        <mat-label>Simulation name (N)</mat-label>
+        <input matInput type="text" placeholder="Ex. Simulation 1" id="nameSimulation" name="nameSimulation" ngModel>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+        <mat-label>Population Size (P)</mat-label>
+        <input matInput type="number" placeholder="Ex. 2" id="populationSize" name="populationSize" ngModel>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+        <mat-label>The initial number of infected people (I)</mat-label>
+        <input matInput type="number" placeholder="Ex. 2" id="initianNumberOfInfectedPeople" name="initianNumberOfInfectedPeople" ngModel>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+        <mat-label>Index of R (R)</mat-label>
+        <input matInput type="number" placeholder="Ex. 2" id="indexOfR" name="indexOfR" ngModel>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+        <mat-label>Mortality rate (M)</mat-label>
+        <input matInput type="number" placeholder="Ex. 2" id="mortalityRate" name="mortalityRate" ngModel>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+        <mat-label>The number of days that elapses from the moment of infection until the sick person recovers (Ti)</mat-label>
+        <input matInput type="number" placeholder="Ex. 2" id="numberDayInfectionToRecover" name="numberDayInfectionToRecover" ngModel>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+        <mat-label>The number of days that elapses from the moment of infection to the patient's death (Tm)</mat-label>
+        <input matInput type="number" placeholder="Ex. 2" id="numberDayInfectionToDeath" name="numberDayInfectionToDeath" ngModel>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+        <mat-label>The number of days for which the simulation is to be performed (Ts)</mat-label>
+        <input matInput type="number" placeholder="Ex. 2" id="numberDaySimulationPerformed" name="numberDaySimulationPerformed" ngModel>
+    </mat-form-field>
+
+
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Sign up</button>
+    </div>
+
+
+</form>
+
+<!--<div class="card">-->
+    <!--<h4 class="card-header">Register</h4>-->
+    <!--<div class="card-body">-->
+        <!--<form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">-->
+
+            <!--<div class="form-group">-->
+                <!--<label for="nameSimulation">Simulation name (N)</label>-->
+                <!--<input-->
+                        <!--type="text"-->
+                        <!--id="nameSimulation"-->
+                        <!--ngModel-->
+                        <!--name="nameSimulation"-->
+                        <!--required-->
+                        <!--class="form-control"-->
+                <!--&gt;-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+                <!--<label for="populationSize">Population Size (P)</label>-->
+                <!--<input-->
+                        <!--type="number"-->
+                        <!--id="populationSize"-->
+                        <!--ngModel-->
+                        <!--name="populationSize"-->
+                        <!--required-->
+                        <!--class="form-control"-->
+                <!--&gt;-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+                <!--<label for="initianNumberOfInfectedPeople">The initial number of infected people (I)</label>-->
+                <!--<input-->
+                        <!--type="number"-->
+                        <!--id="initianNumberOfInfectedPeople"-->
+                        <!--ngModel-->
+                        <!--name="initianNumberOfInfectedPeople"-->
+                        <!--required-->
+                        <!--class="form-control"-->
+                <!--&gt;-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+                <!--<label for="inedxOfR">Indicator showing how many people are infected by one infected person (R)</label>-->
+                <!--<input-->
+                        <!--type="number"-->
+                        <!--id="inedxOfR"-->
+                        <!--ngModel-->
+                        <!--name="inedxOfR"-->
+                        <!--required-->
+                        <!--class="form-control"-->
+                <!--&gt;-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+                <!--<label for="mortalityRate">Mortality rate (M)</label>-->
+                <!--<input-->
+                        <!--type="number"-->
+                        <!--id="mortalityRate"-->
+                        <!--ngModel-->
+                        <!--name="mortalityRate"-->
+                        <!--required-->
+                        <!--class="form-control"-->
+                <!--&gt;-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+                <!--<label for="numberDayInfectionToRecover"> The number of days that elapses from the moment of infection until the sick person recovers (Ti)</label>-->
+                <!--<input-->
+                        <!--type="number"-->
+                        <!--id="numberDayInfectionToRecover"-->
+                        <!--ngModel-->
+                        <!--name="numberDayInfectionToRecover"-->
+                        <!--required-->
+                        <!--class="form-control"-->
+                <!--&gt;-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+                <!--<label for="numberDayInfectionToDeath"> The number of days that elapses from the moment of infection to the patient's death (Tm)</label>-->
+                <!--<input-->
+                        <!--type="number"-->
+                        <!--id="numberDayInfectionToDeath"-->
+                        <!--ngModel-->
+                        <!--name="numberDayInfectionToDeath"-->
+                        <!--required-->
+                        <!--class="form-control"-->
+                <!--&gt;-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+                <!--<label for="numberDaySimulationPerformed"> The number of days for which the simulation is to be performed (Ts)</label>-->
+                <!--<input-->
+                        <!--type="number"-->
+                        <!--id="numberDaySimulationPerformed"-->
+                        <!--ngModel-->
+                        <!--name="numberDaySimulationPerformed"-->
+                        <!--required-->
+                        <!--class="form-control"-->
+                <!--&gt;-->
+            <!--</div>-->
+
+
+
+            <!--<div class="form-group">-->
+                <!--<button class="btn btn-primary" type="submit" [disabled]="!authForm.valid"> Save </button>-->
+            <!--</div>-->
+
+        <!--</form>-->
+    <!--</div>-->
+<!--</div>-->
