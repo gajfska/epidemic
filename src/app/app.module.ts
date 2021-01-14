@@ -14,6 +14,7 @@ import {TableComponent} from './main-page/table/table.component';
 import {AppRoutingModule} from './app-routing.module';
 import {MainPageComponent} from './main-page/main-page.component';
 import {DetailsPageComponent} from './details-page/details-page.component';
+import {SimulationDetailsComponent} from './details-page/simulation-details/simulation-details.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {DetailsPageComponent} from './details-page/details-page.component';
       FormComponent,
       TableComponent,
       MainPageComponent,
-      DetailsPageComponent
+      DetailsPageComponent,
+      SimulationDetailsComponent
 
   ],
   imports: [
