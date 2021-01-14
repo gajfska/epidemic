@@ -13,6 +13,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {TableComponent} from './main-page/table/table.component';
 import {AppRoutingModule} from './app-routing.module';
 import {MainPageComponent} from './main-page/main-page.component';
+import {DetailsPageComponent} from './details-page/details-page.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {MainPageComponent} from './main-page/main-page.component';
     AppComponent,
       FormComponent,
       TableComponent,
-      MainPageComponent
+      MainPageComponent,
+      DetailsPageComponent
 
   ],
   imports: [
