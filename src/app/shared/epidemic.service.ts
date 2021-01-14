@@ -16,6 +16,8 @@ export class EpidemicService {
 
 
     addModel(task: EpidemicModel): void {
+        console.log('Adddd')
+        console.log(task)
         this.epidemicModelsArray.push(task);
         this.updateSimulationsList();
     }

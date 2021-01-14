@@ -49,6 +49,7 @@ export class TableComponent implements OnInit {
     }
 
     onDelete(id: string): void {
+        console.log(id);
         this.epidemicService.deleteSimulation(id);
     }
 

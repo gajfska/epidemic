@@ -21,8 +21,10 @@ export class FormComponent {
             return;
         }
         const value = form.value;
-        // const newSimulation = new EpidemicModel(value);
-        this.epidemicService.addModel(value);
+        const newSimulation = new EpidemicModel(value.nameSimulation, value.populationSize, value.initianNumberOfInfectedPeople,
+            value.indexOfR, value.mortalityRate, value.numberDayInfectionToRecover, value.numberDayInfectionToDeath,
+            value.numberDaySimulationPerformed);
+        this.epidemicService.addModel(newSimulation);
         form.resetForm();
     }
 }
