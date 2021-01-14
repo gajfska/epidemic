@@ -15,6 +15,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {MainPageComponent} from './main-page/main-page.component';
 import {DetailsPageComponent} from './details-page/details-page.component';
 import {SimulationDetailsComponent} from './details-page/simulation-details/simulation-details.component';
+import {SimulationEditComponent} from './details-page/simulation-edit/simulation-edit.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {SimulationDetailsComponent} from './details-page/simulation-details/simu
       TableComponent,
       MainPageComponent,
       DetailsPageComponent,
-      SimulationDetailsComponent
+      SimulationDetailsComponent,
+      SimulationEditComponent
 
   ],
   imports: [
