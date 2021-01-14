@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {EpidemicService} from '../shared/epidemic.service';
-import {EpidemicModel} from '../shared/epidemic.model';
+import {EpidemicService} from '../../shared/epidemic.service';
+import {EpidemicModel} from '../../shared/epidemic.model';
 import {Subscription} from 'rxjs';
 import {MatTableDataSource} from '@angular/material/table';
 

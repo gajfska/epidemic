@@ -1,7 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {EpidemicModel} from '../shared/epidemic.model';
-import {EpidemicService} from '../shared/epidemic.service';
+import {EpidemicModel} from '../../shared/epidemic.model';
+import {EpidemicService} from '../../shared/epidemic.service';
 
 
 @Component({
