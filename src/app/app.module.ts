@@ -11,6 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
 import {TableComponent} from './table/table.component';
+import {AppRoutingModule} from './app-routing.module';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {TableComponent} from './table/table.component';
       MatSelectModule,
       MatButtonModule,
       MatTableModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
