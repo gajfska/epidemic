@@ -14,8 +14,13 @@ import {TableComponent} from './main-page/table/table.component';
 import {AppRoutingModule} from './app-routing.module';
 import {MainPageComponent} from './main-page/main-page.component';
 import {DetailsPageComponent} from './details-page/details-page.component';
-import {SimulationDetailsComponent} from './details-page/simulation-details/simulation-details.component';
-import {SimulationEditComponent} from './details-page/simulation-edit/simulation-edit.component';
+import {SimulationsComponent} from './simulations/simulations.component';
+import {SimulationDetailComponent} from './simulations/simulation-detail/simulation-detail.component';
+import {SimulationEditComponent} from './simulations/simulation-edit/simulation-edit.component';
+import {SimulationListComponent} from './simulations/simulation-list/simulation-list.component';
+import {SimulationItemComponent} from './simulations/simulation-list/simulation-item/simulation-item.component';
+import {SimulationStartComponent} from './simulations/simulation-start/simulation-start.component';
+
 
 
 @NgModule({
@@ -25,8 +30,13 @@ import {SimulationEditComponent} from './details-page/simulation-edit/simulation
       TableComponent,
       MainPageComponent,
       DetailsPageComponent,
-      SimulationDetailsComponent,
-      SimulationEditComponent
+
+      SimulationsComponent,
+      SimulationDetailComponent,
+      SimulationEditComponent,
+      SimulationListComponent,
+      SimulationItemComponent,
+      SimulationStartComponent
 
   ],
   imports: [

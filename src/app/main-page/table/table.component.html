@@ -52,7 +52,7 @@
     <ng-container matColumnDef="details">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element">
-            <button mat-raised-button color="primary">Details</button>
+            <button mat-raised-button color="primary" [routerLink]="['/sim-detail', element.id]">Details</button>
         </td>
     </ng-container>
 

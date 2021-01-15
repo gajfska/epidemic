@@ -20,6 +20,7 @@ export class FormComponent {
         if (!form.valid) {
             return;
         }
+
         const value = form.value;
         const newSimulation = new EpidemicModel(value.nameSimulation, value.populationSize, value.initianNumberOfInfectedPeople,
             value.indexOfR, value.mortalityRate, value.numberDayInfectionToRecover, value.numberDayInfectionToDeath,

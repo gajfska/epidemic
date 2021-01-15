@@ -10,7 +10,7 @@ const appRoutes: Routes = [
     {path: '', redirectTo: '/main-page', pathMatch: 'full'},
     {path: 'main-page', component: MainPageComponent},
     {path: 'details-page', component: DetailsPageComponent, children: [
-            {path: ':id', component: SimulationDetailsComponent},
+            {path: 'sim-detail/:id', component: SimulationDetailsComponent},
             {path: ':id/edit', component: SimulationEditComponent},
         ]},
 

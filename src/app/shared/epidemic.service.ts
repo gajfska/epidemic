@@ -42,4 +42,12 @@ export class EpidemicService {
         this.updateSimulationsList();
     }
 
+    getSimulation(wantedId: number) {
+        // const updateIndex = this.epidemicModelsArray.map((item) => {
+        //     return item.id;
+        // }).indexOf(wantedId);
+
+        return this.epidemicModelsArray[wantedId];
+    }
+
 }
