@@ -1,1 +1,16 @@
 <p>Sim-item!!</p>
+
+<a
+        style="cursor: pointer;"
+        [routerLink]="[index]"
+        class="list-group-item clearfix">
+    <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ simulation.nameSimulation }}</h4>
+        <p class="list-group-item-text">{{ simulation.populationSize }}</p>
+        <p class="list-group-item-text">{{ simulation.initianNumberOfInfectedPeople }}</p>
+        <p class="list-group-item-text">{{ simulation.indexOfR }}</p>
+        <p class="list-group-item-text">{{ simulation.numberDayInfectionToRecover }}</p>
+        <p class="list-group-item-text">{{ simulation.numberDayInfectionToDeath }}</p>
+        <p class="list-group-item-text">{{ simulation.numberDaySimulationPerformed }}</p>
+    </div>
+</a>

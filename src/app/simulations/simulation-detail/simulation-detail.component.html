@@ -1,1 +1,24 @@
 <p>Hello sim-detail</p>
+
+<button class="btn btn-primary" (click)="onEditSimulation()"> Edit Simulation</button>
+<button class="btn btn-danger" (click)="onDeleteSimulation()"> Delete Simulation</button>
+
+<div class="row">
+    <div class="col-xs-12">
+        <h1>{{ simulation.nameSimulation }}</h1>
+    </div>
+</div>
+<div class="row">
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        {{ simulation.populationSize }}
+        {{ simulation.initianNumberOfInfectedPeople }}
+        {{ simulation.indexOfR }}
+        {{ simulation.mortalityRate }}
+        {{ simulation.numberDayInfectionToRecover }}
+        {{ simulation.numberDayInfectionToDeath }}
+        {{ simulation.numberDaySimulationPerformed }}
+    </div>
+</div>
+

@@ -1,7 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
-
 export class EpidemicModel {
-    id = uuidv4();
     nameSimulation: string;
     populationSize: number;
     initianNumberOfInfectedPeople: number;

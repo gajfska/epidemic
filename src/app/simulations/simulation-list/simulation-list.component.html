@@ -1,1 +1,18 @@
 <p>Sim-list</p>
+
+<div class="row">
+    <!--<div class="col-xs-12">-->
+        <!--<button class="btn btn-success" (click)="onNewSimulation()">New Simulation</button>-->
+    <!--</div>-->
+</div>
+<hr>
+<app-simulation-edit></app-simulation-edit>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <app-simulation-item
+                *ngFor="let simulationElement of simulations; let i = index"
+                [simulation]="simulationElement"
+                [index]="i"></app-simulation-item>
+    </div>
+</div>

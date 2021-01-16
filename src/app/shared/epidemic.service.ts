@@ -32,15 +32,15 @@ export class EpidemicService {
         this.updateSimulationsList();
     }
 
-    deleteSimulation(wantedId: string): void {
-        const removeIndex = this.epidemicModelsArray.map((item) => {
-            return item.id;
-        }).indexOf(wantedId);
-
-        this.epidemicModelsArray.splice(removeIndex, 1);
-
-        this.updateSimulationsList();
-    }
+    // deleteSimulation(wantedId: string): void {
+    //     const removeIndex = this.epidemicModelsArray.map((item) => {
+    //         return item.id;
+    //     }).indexOf(wantedId);
+    //
+    //     this.epidemicModelsArray.splice(removeIndex, 1);
+    //
+    //     this.updateSimulationsList();
+    // }
 
     getSimulation(wantedId: number) {
         // const updateIndex = this.epidemicModelsArray.map((item) => {

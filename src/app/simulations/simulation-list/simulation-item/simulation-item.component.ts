@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Simulation} from '../../simulation.model';
+import {DataStorageService} from '../../../shared/data-storage.service';
 
 @Component({
   selector: 'app-simulation-item',
@@ -6,5 +8,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./simulation-item.component.css']
 })
 export class SimulationItemComponent {
+    @Input() simulation: Simulation;
+    @Input() index: number;
 
 }

@@ -20,6 +20,8 @@ import {SimulationEditComponent} from './simulations/simulation-edit/simulation-
 import {SimulationListComponent} from './simulations/simulation-list/simulation-list.component';
 import {SimulationItemComponent} from './simulations/simulation-list/simulation-item/simulation-item.component';
 import {SimulationStartComponent} from './simulations/simulation-start/simulation-start.component';
+import {HttpClientModule} from '@angular/common/http';
+import {SimulationService} from './simulations/simulation.service';
 
 
 
@@ -42,6 +44,7 @@ import {SimulationStartComponent} from './simulations/simulation-start/simulatio
   imports: [
     BrowserModule,
       FormsModule,
+      HttpClientModule,
       BrowserAnimationsModule,
       MatFormFieldModule,
       MatFormFieldModule,
@@ -52,7 +55,7 @@ import {SimulationStartComponent} from './simulations/simulation-start/simulatio
       ReactiveFormsModule,
       AppRoutingModule
   ],
-  providers: [],
+  providers: [SimulationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
