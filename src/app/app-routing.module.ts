@@ -19,25 +19,28 @@ const appRoutes: Routes = [
 //
 
     { path: '', redirectTo: '/simulations', pathMatch: 'full' },
+    { path: 'simulations', component: SimulationsComponent},
+    { path: 'simulations/:id', component: SimulationDetailComponent, resolve: [SimulationsResolverService]},
+    { path: 'simulations/:id/edit', component: SimulationEditComponent, resolve: [SimulationsResolverService]},
 
-    {
-        path: 'simulations',
-        component: SimulationsComponent,
-        children: [
-            { path: '', component: SimulationStartComponent },
-            { path: 'new', component: SimulationEditComponent },
-            {
-                path: ':id',
-                component: SimulationDetailComponent,
-                resolve: [SimulationsResolverService]
-            },
-            {
-                path: ':id/edit',
-                component: SimulationEditComponent,
-                resolve: [SimulationsResolverService]
-            }
-        ]
-    }
+    // {
+    //     path: 'simulations',
+    //     component: SimulationsComponent,
+    //     children: [
+    //         { path: '', component: SimulationStartComponent },
+    //         { path: 'new', component: SimulationEditComponent },
+    //         {
+    //             path: ':id',
+    //             component: SimulationDetailComponent,
+    //             resolve: [SimulationsResolverService]
+    //         },
+    //         {
+    //             path: ':id/edit',
+    //             component: SimulationEditComponent,
+    //             resolve: [SimulationsResolverService]
+    //         }
+    //     ]
+    // }
 ];
 
 
