@@ -1,139 +1,189 @@
 <p>Sim-deit hello</p>
 
+<form class="example-container" [formGroup]="simulationForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="standard">
+        <mat-label>Simulation name (N)</mat-label>
+        <input matInput type="text" placeholder="Ex. Simulation 1" id="nameSimulation" name="nameSimulation" formControlName="nameSimulation">
+    </mat-form-field>
 
-<div class="row">
-    <div class="col-xs-12">
-        <form [formGroup]="simulationForm" (ngSubmit)="onSubmit()">
-            <div class="row">
-                <div class="col-xs-12">
-                    <button
-                            type="submit"
-                            class="btn btn-success"
-                            [disabled]="!simulationForm.valid">Save</button>
-                    <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
-                </div>
-            </div>
+    <mat-form-field appearance="standard">
+        <mat-label>Population Size (P)</mat-label>
+        <input matInput type="number" placeholder="Ex. 2" id="populationSize" name="populationSize" formControlName="populationSize">
+    </mat-form-field>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="nameSimulation">nameSimulation</label>
-                        <input
-                                type="text"
-                                id="nameSimulation"
-                                formControlName="nameSimulation"
-                                class="form-control">
-                    </div>
-                </div>
-            </div>
+    <mat-form-field appearance="standard">
+        <mat-label>The initial number of infected people (I)</mat-label>
+        <input matInput type="number" placeholder="Ex. 2" id="initianNumberOfInfectedPeople" name="initianNumberOfInfectedPeople" formControlName="initianNumberOfInfectedPeople">
+    </mat-form-field>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="populationSize">populationSize</label>
-                        <input
-                                type="number"
-                                id="populationSize"
-                                formControlName="populationSize"
-                                class="form-control">
-                    </div>
-                </div>
-            </div>
+    <mat-form-field appearance="standard">
+        <mat-label>Index of R (R)</mat-label>
+        <input matInput type="number" placeholder="Ex. 2" id="indexOfR" name="indexOfR" formControlName="indexOfR">
+    </mat-form-field>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="initianNumberOfInfectedPeople">initianNumberOfInfectedPeople</label>
-                        <input
-                                type="number"
-                                id="initianNumberOfInfectedPeople"
-                                formControlName="initianNumberOfInfectedPeople"
-                                class="form-control">
-                    </div>
-                </div>
-            </div>
+    <mat-form-field appearance="standard">
+        <mat-label>Mortality rate (M)</mat-label>
+        <input matInput type="number" placeholder="Ex. 2" id="mortalityRate" name="mortalityRate" formControlName="mortalityRate">
+    </mat-form-field>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="indexOfR">indexOfR</label>
-                        <input
-                                type="number"
-                                id="indexOfR"
-                                formControlName="indexOfR"
-                                class="form-control">
-                    </div>
-                </div>
-            </div>
+    <mat-form-field appearance="standard">
+        <mat-label>The number of days that elapses from the moment of infection until the sick person recovers (Ti)</mat-label>
+        <input matInput type="number" placeholder="Ex. 2" id="numberDayInfectionToRecover" name="numberDayInfectionToRecover" formControlName="numberDayInfectionToRecover">
+    </mat-form-field>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="mortalityRate">mortalityRate</label>
-                        <input
-                                type="number"
-                                id="mortalityRate"
-                                formControlName="mortalityRate"
-                                class="form-control">
-                    </div>
-                </div>
-            </div>
+    <mat-form-field appearance="standard">
+        <mat-label>The number of days that elapses from the moment of infection to the patient's death (Tm)</mat-label>
+        <input matInput type="number" placeholder="Ex. 2" id="numberDayInfectionToDeath" name="numberDayInfectionToDeath" formControlName="numberDayInfectionToDeath">
+    </mat-form-field>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="numberDayInfectionToRecover">numberDayInfectionToRecover</label>
-                        <input
-                                type="number"
-                                id="numberDayInfectionToRecover"
-                                formControlName="numberDayInfectionToRecover"
-                                class="form-control">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="numberDayInfectionToDeath">numberDayInfectionToDeath</label>
-                        <input
-                                type="number"
-                                id="numberDayInfectionToDeath"
-                                formControlName="numberDayInfectionToDeath"
-                                class="form-control">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="numberDaySimulationPerformed">numberDaySimulationPerformed</label>
-                        <input
-                                type="number"
-                                id="numberDaySimulationPerformed"
-                                formControlName="numberDaySimulationPerformed"
-                                class="form-control">
-                    </div>
-                </div>
-            </div>
+    <mat-form-field appearance="standard">
+        <mat-label>The number of days for which the simulation is to be performed (Ts)</mat-label>
+        <input matInput type="number" placeholder="Ex. 2" id="numberDaySimulationPerformed" name="numberDaySimulationPerformed" formControlName="numberDaySimulationPerformed">
+    </mat-form-field>
 
 
+    <div class="form-group">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!simulationForm.valid">Save</button>
+        <button mat-raised-button color="primary" (click)="onCancel()">Cancel</button>
+    </div>
 
+
+</form>
+
+
+<!--<div class="row">-->
+    <!--<div class="col-xs-12">-->
+        <!--<form [formGroup]="simulationForm" (ngSubmit)="onSubmit()">-->
+            <!--<div class="row">-->
+                <!--<div class="col-xs-12">-->
+                    <!--<button-->
+                            <!--type="submit"-->
+                            <!--class="btn btn-success"-->
+                            <!--[disabled]="!simulationForm.valid">Save</button>-->
+                    <!--<button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>-->
+                <!--</div>-->
+            <!--</div>-->
 
             <!--<div class="row">-->
                 <!--<div class="col-xs-12">-->
                     <!--<div class="form-group">-->
-                        <!--<label for="description">Description</label>-->
-                        <!--<textarea-->
+                        <!--<label for="nameSimulation">nameSimulation</label>-->
+                        <!--<input-->
                                 <!--type="text"-->
-                                <!--id="description"-->
-                                <!--class="form-control"-->
-                                <!--formControlName="description"-->
-                                <!--rows="6"></textarea>-->
+                                <!--id="nameSimulation"-->
+                                <!--formControlName="nameSimulation"-->
+                                <!--class="form-control">-->
                     <!--</div>-->
                 <!--</div>-->
             <!--</div>-->
-        </form>
-    </div>
-</div>
+
+            <!--<div class="row">-->
+                <!--<div class="col-xs-12">-->
+                    <!--<div class="form-group">-->
+                        <!--<label for="populationSize">populationSize</label>-->
+                        <!--<input-->
+                                <!--type="number"-->
+                                <!--id="populationSize"-->
+                                <!--formControlName="populationSize"-->
+                                <!--class="form-control">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="row">-->
+                <!--<div class="col-xs-12">-->
+                    <!--<div class="form-group">-->
+                        <!--<label for="initianNumberOfInfectedPeople">initianNumberOfInfectedPeople</label>-->
+                        <!--<input-->
+                                <!--type="number"-->
+                                <!--id="initianNumberOfInfectedPeople"-->
+                                <!--formControlName="initianNumberOfInfectedPeople"-->
+                                <!--class="form-control">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="row">-->
+                <!--<div class="col-xs-12">-->
+                    <!--<div class="form-group">-->
+                        <!--<label for="indexOfR">indexOfR</label>-->
+                        <!--<input-->
+                                <!--type="number"-->
+                                <!--id="indexOfR"-->
+                                <!--formControlName="indexOfR"-->
+                                <!--class="form-control">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="row">-->
+                <!--<div class="col-xs-12">-->
+                    <!--<div class="form-group">-->
+                        <!--<label for="mortalityRate">mortalityRate</label>-->
+                        <!--<input-->
+                                <!--type="number"-->
+                                <!--id="mortalityRate"-->
+                                <!--formControlName="mortalityRate"-->
+                                <!--class="form-control">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="row">-->
+                <!--<div class="col-xs-12">-->
+                    <!--<div class="form-group">-->
+                        <!--<label for="numberDayInfectionToRecover">numberDayInfectionToRecover</label>-->
+                        <!--<input-->
+                                <!--type="number"-->
+                                <!--id="numberDayInfectionToRecover"-->
+                                <!--formControlName="numberDayInfectionToRecover"-->
+                                <!--class="form-control">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="row">-->
+                <!--<div class="col-xs-12">-->
+                    <!--<div class="form-group">-->
+                        <!--<label for="numberDayInfectionToDeath">numberDayInfectionToDeath</label>-->
+                        <!--<input-->
+                                <!--type="number"-->
+                                <!--id="numberDayInfectionToDeath"-->
+                                <!--formControlName="numberDayInfectionToDeath"-->
+                                <!--class="form-control">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="row">-->
+                <!--<div class="col-xs-12">-->
+                    <!--<div class="form-group">-->
+                        <!--<label for="numberDaySimulationPerformed">numberDaySimulationPerformed</label>-->
+                        <!--<input-->
+                                <!--type="number"-->
+                                <!--id="numberDaySimulationPerformed"-->
+                                <!--formControlName="numberDaySimulationPerformed"-->
+                                <!--class="form-control">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+
+
+
+            <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="col-xs-12">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<label for="description">Description</label>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<textarea&ndash;&gt;-->
+                                <!--&lt;!&ndash;type="text"&ndash;&gt;-->
+                                <!--&lt;!&ndash;id="description"&ndash;&gt;-->
+                                <!--&lt;!&ndash;class="form-control"&ndash;&gt;-->
+                                <!--&lt;!&ndash;formControlName="description"&ndash;&gt;-->
+                                <!--&lt;!&ndash;rows="6"></textarea>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</form>-->
+    <!--</div>-->
+<!--</div>-->
